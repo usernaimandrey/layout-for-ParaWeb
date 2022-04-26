@@ -1,2 +1,8 @@
 #system
 .vagrant
+
+#dep
+node_modules
+
+#build
+dist

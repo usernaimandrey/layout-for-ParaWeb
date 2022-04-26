@@ -2,10 +2,47 @@
   "name": "layot",
   "version": "1.0.0",
   "description": "тестовое HTML SCSS JS",
-  "main": "src/index.js",
+  "main": "./src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx webpack serve",
+    "build": "NODE_ENV=production npx webpack"
   },
   "author": "Andrey Shlyapnikov",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/usernaimandrey/layout-for-ParaWeb.git"
+  },
+  "bugs": {
+    "url": "https://github.com/usernaimandrey/layout-for-ParaWeb/issues"
+  },
+  "homepage": "https://github.com/usernaimandrey/layout-for-ParaWeb#readme",
+  "devDependencies": {
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.8.1",
+    "@babel/core": "^7.17.9",
+    "@babel/eslint-parser": "^7.15.4",
+    "@babel/preset-env": "^7.15.4",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^6.2.0",
+    "debug": "^4.3.2",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-babel": "^5.3.1",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-jest": "^24.4.0",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.3.2",
+    "postcss-loader": "^6.1.1",
+    "postcss-preset-env": "^6.7.0",
+    "source-map-loader": "^3.0.0",
+    "style-loader": "^3.2.1",
+    "url-loader": "^4.1.1"
+  },
+  "dependencies": {
+    "sass": "^1.39.0",
+    "sass-loader": "^12.1.0"
+  }
 }
