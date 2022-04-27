@@ -4,6 +4,7 @@ const { SourceMapDevToolPlugin } = require('webpack');
 
 module.exports = {
   mode: process.env.NODE_ENV || 'development',
+  watch: true,
   module: {
     rules: [
       {
@@ -27,12 +28,20 @@ module.exports = {
         use: ['style-loader', 'css-loader', 'sass-loader', 'postcss-loader'],
       },
       {
-        test: /\.woff2?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        test: /\.woff2?(\?v=[0-9]\.[0-9]\.[0-9]|.ttf)?$/,
         use: 'url-loader?limit=10000',
       },
       {
-        test: /\.(ttf|eot|svg)(\?[\s\S]+)?$/,
-        use: 'file-loader',
+        test: /\.(svg|png|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
+      },
+      {
+        test: /\.html$/i,
+        loader: 'html-loader',
       },
     ],
   },

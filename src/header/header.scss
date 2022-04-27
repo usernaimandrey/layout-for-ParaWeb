@@ -1,8 +1,117 @@
+$logo: #092433;
+$medium: 500;
+$color-text: #000;
+$color-icon: #092433;
+$sizes: ("xs":320px, "sm":576px, "md":768px, "lg":992px, "xl":1200px);
+
+@mixin media($minmax, $media) {
+    @each $size, $resolution in $sizes {
+      @if $media == $size {
+        @media only screen and (#{$minmax}-width: $resolution) {
+          @content;
+        }
+      }
+    }
+  }
+
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-width: 100%;
+    padding: 0 138px 0 138px;
     min-height: 88px;
-    padding: 0 138px 0 138px
+    @include media("max", "md") {
+        padding: 0 15px;
+    }
+
+    &__logo {
+        height: 40px;
+        width: 74px;
+        border-radius: 0px;
+
+    }
+
+    &__logo_icon {
+        align-self: center;
+        height: 31.2px;
+        width: 73.5px;
+        border-radius: 0px;
+
+    }
+
+    &-contacts {
+        display: flex;
+        min-width: 273px;
+        justify-content: space-between;
+        align-items: center;
+        @include media("max", "sm") {
+            justify-content: end;
+        }
+    }
+
+    &-contacts__telephon {
+        height: 22px;
+        width: 122px;
+    }
+
+    &-contacts__telephon_item {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 22px;
+        letter-spacing: 0em;
+        @include media("max", "sm") {
+            display: none;
+        }
+    }
+
+    &-contacts__icon {
+        display: none;
+        @include media("max", "sm") {
+            display: flex;
+            min-width: 72px;
+            justify-content: space-between;
+        }
+    }
+
+    &-contacts__mail {
+        height: 22px;
+        width: 107px;
+        @include media("max", "sm") {
+            display: none;
+        }
+    }
+
+    &-contacts__mail_item {
+        font-size: 16px;
+        font-weight: $medium;
+        letter-spacing: 0em;
+        color: $color-text;
+        text-decoration: none;
+    }
+
+    &-contacts__telephon_icon {
+        @include media("max", "sm") {
+            width: 26.36px;
+            height: 8.65px;
+
+            background: $color-icon;
+            transform: matrix(0.71, 0.67, -0.74, 0.71, 0, 0);
+        }
+    }
+
+    &-contacts__email_icon {
+        @include media("max", "sm") {
+            position: absolute;
+            width: 28px;
+            height: 22px;
+            left: 347px;
+            top: 17px;
+
+            background: $color-icon;
+        }
+    }
+
+
 }
+
+
