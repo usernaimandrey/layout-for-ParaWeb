@@ -29,7 +29,8 @@ jobs:
     - name: npm install
         # Install project
       run: |
-          make install
+          make install, build
+          make build
     - name: Run linter
         # Run Linter
       run: |
