@@ -4,7 +4,10 @@ const { SourceMapDevToolPlugin } = require('webpack');
 
 module.exports = {
   mode: process.env.NODE_ENV || 'development',
-  watch: true,
+  target: 'web',
+  devServer: {
+    liveReload: true,
+  },
   module: {
     rules: [
       {
@@ -32,7 +35,7 @@ module.exports = {
         use: 'url-loader?limit=10000',
       },
       {
-        test: /\.(svg|png|gif)$/i,
+        test: /\.(svg|gif)$/i,
         use: [
           {
             loader: 'file-loader',
