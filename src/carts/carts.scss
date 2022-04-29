@@ -12,23 +12,30 @@ $color-text-author: #fff;
     grid-gap: 20px;
 
     &__item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         min-width: 295px;
-        min-height: 258px;
+        height: 258px;
 
         padding: 16px 0 24px 0;
 
         border: 1px solid $border-color;
 
         &__header {
-            min-height: 54px;
+            max-height: 54px;
             width: 100%;
 
             border-bottom: 1px solid $border-color;
 
             &_item {
-                height: 22px;
-                width: 159px;
+                max-height: 22px;
+                min-width: 159px;
                 margin-left: 26px;
+
+                white-space: nowrap;
+                overflow-x: hidden;
+                text-overflow: ellipsis;
                 
                 font-size: 16px;
                 font-weight: 600;
@@ -40,7 +47,7 @@ $color-text-author: #fff;
         }
 
         &__body {
-            max-height: 110px;
+            min-height: 110px;
             margin-top: 24px;
             margin-left: 26px;
             margin-right: 24px;
@@ -51,6 +58,8 @@ $color-text-author: #fff;
                 line-height: 20px;
                 letter-spacing: 0em;
                 text-align: left;
+                overflow-x: hidden;
+                text-overflow: ellipsis;
                 color: $color-text;
             }
         }
@@ -71,7 +80,7 @@ $color-text-author: #fff;
                 font-weight: 500;
                 line-height: 20px;
                 letter-spacing: 0em;
-                text-align: left;
+                text-align: center;
             }
 
             &_color-author {

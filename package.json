@@ -43,7 +43,9 @@
     "webpack-dev-server": "^4.8.1"
   },
   "dependencies": {
+    "axios": "^0.27.2",
     "flickity": "^3.0.0",
+    "on-change": "^4.0.0",
     "sass": "^1.39.0",
     "sass-loader": "^12.1.0"
   }
