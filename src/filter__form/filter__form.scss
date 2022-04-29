@@ -2,38 +2,41 @@
 
 $color-input: #E8E8E8;
 
-.filter-cards {
+.filter-carts {
     display: flex;
     flex-direction: column;
-    margin: 60px 257px 60px 257px;
+    padding: 60px 257px 60px 257px;
     @include media("max", "xl") {
-        margin: 60px 200px 60px 200px;
+        padding: 60px 200px 60px 200px;
     }
 
     @include media("max", "lg") {
-        margin: 60px 100px 60px 100px;
+        padding: 60px 100px 60px 100px;
     }
 
     @include media("max", "md") {
-        margin: 40px;
+        padding: 40px;
     }
 
     @include media("max", "sm") {
-        margin: 60px 10px 60px 10px;
+        padding: 10px;
     }
 
     .filter {
         display: flex;
         width: 100%;
         min-height: 72px;
+        margin-bottom: 20px;
         @include media("max", "md") {
+            justify-content: center;
             min-height: 92px;
         }
 
         &__form {
             display: grid;
-            grid-template-columns: 335px 295px;
-            width: 100%;
+            grid-template-columns: repeat(2, minmax(295px, 1fr));
+            grid-gap: 20px;
+            max-width: 100%;
             @include media("max", "md") {
                 display: flex;
                 flex-direction: column;
@@ -45,7 +48,7 @@ $color-input: #E8E8E8;
                 align-self: center;
                 &_item {
                     height: 40px;
-                    width: 295px;
+                    min-width: 100%;
                     border-radius: 4px;
                     padding: 10px;
 
@@ -59,7 +62,7 @@ $color-input: #E8E8E8;
 
                 img {
                     position: absolute;
-                    left: 83%;
+                    left: 92%;
                     right: -60%;
                     top: 34%;
                     bottom: 11%;
@@ -68,6 +71,9 @@ $color-input: #E8E8E8;
                     transform: matrix(-1, 0, 0, 1, 0, 0);
 
                     @include media("max", "sm") {
+                        left: 94%;
+                    }
+                    @include media("max", "md") {
                         left: 94%;
                     }
                 }

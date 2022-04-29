@@ -1,0 +1,88 @@
+$border-color: #E5E5E5;
+$color-text: #000000A6;
+$color-author: #092433;
+$color-date: #E8E8E8;
+$color-text-date: #595959;
+$color-text-author: #fff;
+
+.carts {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(295px, 1fr));
+    grid-gap: 20px;
+
+    &__item {
+        min-width: 295px;
+        min-height: 258px;
+
+        padding: 16px 0 24px 0;
+
+        border: 1px solid $border-color;
+
+        &__header {
+            min-height: 54px;
+            width: 100%;
+
+            border-bottom: 1px solid $border-color;
+
+            &_item {
+                height: 22px;
+                width: 159px;
+                margin-left: 26px;
+                
+                font-size: 16px;
+                font-weight: 600;
+                line-height: 22px;
+                letter-spacing: 0em;
+                text-align: left;
+                color: $color-text;
+            }
+        }
+
+        &__body {
+            max-height: 110px;
+            margin-top: 24px;
+            margin-left: 26px;
+            margin-right: 24px;
+
+            &_text {
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 20px;
+                letter-spacing: 0em;
+                text-align: left;
+                color: $color-text;
+            }
+        }
+
+        &__footer {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 24px 0 26px;
+            margin-top: 16px;
+            
+            &_text {
+                max-width: 110px;
+                max-height: 20px;
+                border-radius: 10px;
+                padding: 0 16px 0 16px;
+
+                font-size: 12px;
+                font-weight: 500;
+                line-height: 20px;
+                letter-spacing: 0em;
+                text-align: left;
+            }
+
+            &_color-author {
+                background: $color-author;
+                color: $color-text-author;
+            }
+
+            &_color-date {
+                border: 1px solid $color-date;
+                color: $color-text-date;
+            }
+        }
+    }
+}

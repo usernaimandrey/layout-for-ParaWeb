@@ -3,6 +3,7 @@ import './index.scss';
 import './header/header.scss';
 import './carousel/carousel.scss';
 import './filter__form/filter__form.scss';
+import './carts/carts.scss';
 import runApp from './app.js';
 
 runApp();
