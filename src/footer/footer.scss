@@ -1,0 +1,97 @@
+@import '../header/header.scss';
+
+$backgroundFooter: #092433;
+$colorText: #fff;
+
+.footer {
+    display: grid;
+    grid-template-columns: 600px 600px;
+    align-items: center;
+    grid-column-gap: 540px;
+    min-width: 100%;
+    min-height: 321px;
+    background: $backgroundFooter;
+
+    &__logo {
+        padding: 20px;
+        &_logotip {
+            max-height: 86px;
+            max-width: 200px;
+            border-radius: 0px;
+    
+        }
+    
+        &__text {
+            
+    
+            &_copy {
+                height: 20px;
+                width: 220px;
+    
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 20px;
+                letter-spacing: 0em;
+                text-align: left;
+    
+                color: rgba(255, 255, 255, 0.8);
+    
+                opacity: 0.5;
+            }
+    
+            &_license {
+                visibility: hidden;
+                height: 20px;
+                width: 357px;
+    
+                font-size: 12px;
+                font-weight: 500;
+                line-height: 20px;
+                letter-spacing: 0em;
+                text-align: left;
+    
+                color: $colorText;
+    
+                opacity: 0.5;
+            }
+        }
+    }
+
+    &__contacts {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        min-width: 674px;
+        min-height: 164px;
+
+        &__menu {
+            display: flex;
+            justify-content: space-between;
+
+            &_item  {
+                a {
+                    height: 24px;
+                    width: 69px;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 24px;
+        
+                    color: $colorText;
+                    text-decoration: none;
+                }
+            }
+        }
+    
+        &__social {
+
+            display: flex;
+            &_item {
+                margin: 20px 20px 20px 0;
+                width: 23px;
+                height: 20px;
+            }
+        }
+    }
+}
