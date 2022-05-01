@@ -33,7 +33,15 @@ $sizes: ("xs":320px, "vsm": 350px, "sm":576px, "md":768px, "lg":992px, "xl":1200
         height: 40px;
         width: 74px;
         border-radius: 0px;
+        @include media("max", "xs") {
+            position: relative;
+            left: 100px;
+        }
 
+        @include media("max", "vsm") {
+            position: relative;
+            left: 80px;
+        }
     }
 
     &__logo_icon {

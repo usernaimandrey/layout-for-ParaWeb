@@ -1,10 +1,10 @@
-import cartCreate from './cart.js';
-import CartsApi from '../utils/cartsApi';
+import cartCreate from './card.js';
+import CardsApi from '../utils/cardsApi';
 
 class CartsService {
   constructor() {
     this.cartCreate = cartCreate;
-    this.cartsApi = CartsApi;
+    this.cartsApi = CardsApi;
   }
 
   getCarts() {
@@ -14,7 +14,6 @@ class CartsService {
   renderCarts(carts, container) {
     const newCarts = carts.map((cartData) => {
       const cart = this.cartCreate(cartData);
-      // container.append(cart);
       return cart;
     });
     container.replaceChildren(...newCarts);

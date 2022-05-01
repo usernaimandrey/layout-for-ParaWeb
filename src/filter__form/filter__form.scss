@@ -1,6 +1,7 @@
 @import '../header/header.scss';
 
 $color-input: #E8E8E8;
+$color-alert: #f00;
 
 .filter-carts {
     display: flex;
@@ -121,7 +122,18 @@ $color-input: #E8E8E8;
                     @include media("max", "vsm") {
                         left: 139px;
                     }
+                }
 
+                &_invalid-fit-back {
+                    display: none;
+                    position: absolute;
+                    top: 45px;
+                    left: 70px;
+
+                    background: $color-alert;
+                    color: $color-input;
+                    border-radius: 10px;
+                    padding: 0 5px 0 5px;
                 }
 
                 .start_item {

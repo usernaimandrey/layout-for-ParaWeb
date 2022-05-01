@@ -11,6 +11,62 @@ $color-text-author: #fff;
     grid-template-columns: repeat(auto-fit, minmax(295px, 1fr));
     grid-gap: 20px;
 
+    &__toast {
+        visibility: hidden;
+        display: flex;
+        position: fixed;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        max-width: 300px;
+        min-height: 100px;
+        z-index: 1;
+        left: 80%;
+        bottom: 30px;
+        border: 1px solid #595959;
+        border-radius: 5px;
+        background: linear-gradient(180deg, #EE692B 50%, #EEA72B 90%);
+
+        &_header {
+            font-size: large;
+            padding: 5px 0 5px 0;
+            min-width: 100%;
+            text-align: center;
+            border-bottom: 1px solid;
+        }
+
+        &_body {
+            padding: 5px;
+            text-align: center;
+        }
+    }
+
+    &__toast_show {
+        visibility: visible;
+        -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    }
+
+    @-webkit-keyframes fadein {
+        from {right: 0; opacity: 0;} 
+        to {right: 40px; opacity: 1;}
+      }
+      
+    @keyframes fadein {
+        from {right: 0; opacity: 0;}
+        to {right: 40px; opacity: 1;}
+      }
+      
+    @-webkit-keyframes fadeout {
+        from {right: 40px; opacity: 1;} 
+        to {right: 0; opacity: 0;}
+      }
+      
+    @keyframes fadeout {
+        from {right: 40px; opacity: 1;}
+        to {right: 0; opacity: 0;}
+      }
+
     &__item {
         display: flex;
         flex-direction: column;
