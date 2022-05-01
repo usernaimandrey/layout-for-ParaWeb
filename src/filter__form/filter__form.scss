@@ -58,6 +58,10 @@ $color-input: #E8E8E8;
                     @include media("max", "md") {
                         min-width: 332px;
                     }
+
+                    @include media("max", "vsm") {
+                        min-width: 296px;
+                    }
                 }
 
                 img {
@@ -96,6 +100,10 @@ $color-input: #E8E8E8;
                     font-weight: 400;
                     font-size: 14px;
                     line-height: 20px;
+
+                    @include media("max", "vsm") {
+                        width: 150px;
+                    }
                 }
 
                 &_tilda {
@@ -109,6 +117,10 @@ $color-input: #E8E8E8;
                     text-align: left;
 
                     color: #000000A6;
+
+                    @include media("max", "vsm") {
+                        left: 139px;
+                    }
 
                 }
 

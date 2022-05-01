@@ -1,7 +1,7 @@
 import axios from 'axios';
-import getRoute from './route.js';
+import getRoute from '../route.js';
 
-class CardsApi {
+class CartsApi {
   constructor() {
     this.axios = axios.create({
       baseURL: getRoute(),
@@ -14,4 +14,4 @@ class CardsApi {
   }
 }
 
-export default new CardsApi();
+export default new CartsApi();

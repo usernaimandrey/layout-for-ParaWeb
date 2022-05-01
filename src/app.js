@@ -1,6 +1,6 @@
 import carousel from './carousel/carousel.js';
 import inputFocus from './filter__form/inputFocus.js';
-import CardsApi from './cardsApi.js';
+import CartsService from './carts/cartsService.js';
 import watcher from './view.js';
 
 const app = () => {
@@ -8,23 +8,38 @@ const app = () => {
     carts: [],
     load: '', // loading succes faled
     filterName: '',
-    filterDate: '',
+    filterDate: {
+      start: '',
+      end: '',
+    },
   };
 
-  const watcheState = watcher(state);
+  const cartsContainer = document.querySelector('.carts');
+  const input = document.querySelector('.end_item');
+  const carouselContainer = document.querySelector('.carousel');
+  const watcheState = watcher(state, cartsContainer);
+  const filterByName = document.querySelector('.filter__form__author_item');
   watcheState.load = 'loading';
-  CardsApi.get()
+  CartsService.getCarts()
     .then(({ data }) => {
-      watcheState.carts.push(...data.articles);
+      const normalizeData = data.articles.map((el) => {
+        if (!el.author) {
+          return { ...el, author: 'no-author' };
+        }
+        return el;
+      });
+      watcheState.carts.push(...normalizeData);
       watcheState.load = 'succes';
     })
     .catch(() => {
       watcheState.load = 'faled';
     });
 
-  const input = document.querySelector('.end_item');
+  filterByName.addEventListener('input', (e) => {
+    watcheState.filterName = e.target.value;
+  });
   inputFocus(input);
-  carousel();
+  carousel(carouselContainer);
 };
 
 export default app;

@@ -1,8 +1,7 @@
 import Flickity from 'flickity';
 
-const carousel = () => {
-  const el = document.querySelector('.carousel');
-  const newFlickity = new Flickity(el, {
+const carousel = (container) => {
+  const newFlickity = new Flickity(container, {
     setGallerySize: true,
     wrapAround: true,
     freeScroll: true,
