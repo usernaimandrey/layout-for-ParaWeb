@@ -5,24 +5,58 @@ $colorText: #fff;
 
 .footer {
     display: grid;
-    grid-template-columns: 600px 600px;
+    grid-template-columns: minmax(300px, 600px) minmax(300px, 600px);
     align-items: center;
     grid-column-gap: 540px;
     min-width: 100%;
     min-height: 321px;
     background: $backgroundFooter;
 
+    @include media("max", "xxl") {
+        grid-column-gap: 300px;
+    }
+
+    @include media("max", "xll") {
+        grid-template-columns: 300px minmax(300px, 600px);
+        grid-column-gap: 100px;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    @include media("max", "xl") {
+        grid-template-columns: 200px minmax(300px, 600px);
+        grid-column-gap: 50px;
+    }
+
+    @include media("max", "lg") {
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        padding: 20px;
+    }
+
+
     &__logo {
         padding: 20px;
+        @include media("max", "md") {
+            display: flex;
+            align-items: baseline;
+            padding: 0;
+        }
         &_logotip {
             max-height: 86px;
             max-width: 200px;
             border-radius: 0px;
-    
+            @include media("max", "md") {
+                width: 93px;
+                height: 39px;
+            }
         }
-    
+
         &__text {
-            
+            @include media("max", "md") {
+                display: none;
+            }
     
             &_copy {
                 height: 20px;
@@ -53,21 +87,56 @@ $colorText: #fff;
                 color: $colorText;
     
                 opacity: 0.5;
+    
+                @include media("max", "lg") {
+                    visibility: visible;
+                }
             }
         }
+    
     }
-
     &__contacts {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-
-        min-width: 674px;
+        max-width: 674px;
         min-height: 164px;
+
+        @include media("max", "lg") {
+            flex-direction: column-reverse;
+            min-width: 400px;
+        }
+
+        @include media("max", "md") {
+            flex-direction: column-reverse;
+            max-width: 200px;
+        }
+
+        @include media("max", "sm") {
+            flex-direction: column-reverse;
+            max-width: 200px;
+        }
+
+        @include media("max", "vsm") {
+            flex-direction: column-reverse;
+            max-width: 200px;
+            min-width: 200px;
+        }
+        @include media("max", "xs") {
+            flex-direction: column-reverse;
+            max-width: 200px;
+        }
 
         &__menu {
             display: flex;
             justify-content: space-between;
+
+            @include media("max", "md") {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(100px, 1fr));
+                column-gap: 77px;
+                row-gap: 22px;
+            }
 
             &_item  {
                 a {
@@ -87,10 +156,61 @@ $colorText: #fff;
         &__social {
 
             display: flex;
+            @include media("max", "xl") {
+                justify-content: center;
+            }
+
+            @include media("max", "md") {
+                justify-content: revert;
+            }
             &_item {
                 margin: 20px 20px 20px 0;
                 width: 23px;
                 height: 20px;
+                
+                @include media("max", "md") {
+                    width: 22px;
+                    height: 13px;
+                }
+            }
+        }
+    }
+
+    &-copy {
+
+        &__contacts {
+            display: none;
+        @include media("max", "md") {
+            display: block;
+            }
+
+            &_copy {
+                height: 20px;
+                width: 220px;
+    
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 20px;
+                letter-spacing: 0em;
+                text-align: left;
+    
+                color: rgba(255, 255, 255, 0.8);
+    
+                opacity: 0.5;
+            }
+
+            &_license {
+                width: 357px;
+    
+                font-size: 12px;
+                font-weight: 500;
+                line-height: 20px;
+                letter-spacing: 0em;
+                text-align: left;
+    
+                color: $colorText;
+    
+                opacity: 0.5;
             }
         }
     }

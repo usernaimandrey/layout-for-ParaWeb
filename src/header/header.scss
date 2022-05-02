@@ -2,7 +2,7 @@ $logo: #092433;
 $medium: 500;
 $color-text: #000;
 $color-icon: #092433;
-$sizes: ("xs":320px, "vsm": 350px, "sm":576px, "md":768px, "lg":992px, "xl":1200px);
+$sizes: ("xs":320px, "vsm": 350px, "sm":576px, "md":768px, "lg":992px, "xl":1200px, "xll": 1600px, "xxl": 1900px);
 
 @mixin media($minmax, $media) {
     @each $size, $resolution in $sizes {
