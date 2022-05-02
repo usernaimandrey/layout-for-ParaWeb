@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-globals */
 import carousel from './carousel/carousel.js';
 import inputFocus from './filter__form/inputFocus.js';
 import CartsService from './carts/cardsService.js';
@@ -22,6 +23,7 @@ const app = () => {
   const inputDateStart = document.querySelector('.start_item');
   const inputDateEnd = document.querySelector('.end_item');
   const filterByName = document.querySelector('.filter__form__author_item');
+  const fixedElement = document.querySelector('.filter__form');
   watcheState.load = 'loading';
   CartsService.getCarts()
     .then(({ data }) => {
@@ -37,6 +39,19 @@ const app = () => {
     .catch(() => {
       watcheState.load = 'faled';
     });
+
+  window.addEventListener('scroll', () => {
+    const coordinate = scrollY;
+    if (coordinate > 530) {
+      fixedElement.style.position = 'fixed';
+      fixedElement.style.top = '0px';
+      fixedElement.style.bottom = '400px';
+    } else if (coordinate < 530) {
+      fixedElement.style.position = '';
+      fixedElement.style.top = '';
+      fixedElement.style.bottom = '';
+    }
+  });
 
   filterByName.addEventListener('input', (e) => {
     const { value } = e.target;

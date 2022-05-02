@@ -18,14 +18,28 @@ $sizes: ("xs":320px, "vsm": 350px, "sm":576px, "md":768px, "lg":992px, "xl":1200
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    width: 90%;
+    z-index: 1;
     padding: 0 138px 0 138px;
+    background: #fff;
     min-height: 88px;
+
+    @include media("max", "lg") {
+        justify-content: space-around;
+    }
+
+    @include media("max", "xl") {
+        justify-content: space-around;
+    }
+
     @include media("max", "sm") {
         padding: 0 25px 0 80px;
         justify-content: end;
     }
 
     @include media("max", "md") {
+        justify-content: space-around;
         padding: 0 25px 0 80px;
     }
 
@@ -58,7 +72,7 @@ $sizes: ("xs":320px, "vsm": 350px, "sm":576px, "md":768px, "lg":992px, "xl":1200
         justify-content: space-between;
         align-items: center;
         @include media("max", "sm") {
-            justify-content: end;
+            justify-content: center;
         }
     }
 
