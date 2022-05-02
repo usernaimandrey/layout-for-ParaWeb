@@ -42,14 +42,26 @@ const app = () => {
 
   window.addEventListener('scroll', () => {
     const coordinate = scrollY;
-    if (coordinate > 530) {
-      fixedElement.style.position = 'fixed';
-      fixedElement.style.top = '0px';
-      fixedElement.style.bottom = '400px';
-    } else if (coordinate < 530) {
-      fixedElement.style.position = '';
-      fixedElement.style.top = '';
-      fixedElement.style.bottom = '';
+    if (screen.width > 1900) {
+      if (coordinate > 530) {
+        fixedElement.style.position = 'fixed';
+        fixedElement.style.top = '0px';
+        fixedElement.style.bottom = '700px';
+      } else if (coordinate < 530) {
+        fixedElement.style.position = '';
+        fixedElement.style.top = '';
+        fixedElement.style.bottom = '';
+      }
+    } else if (screen.width <= 2011) {
+      if (coordinate > 513) {
+        fixedElement.style.position = 'fixed';
+        fixedElement.style.top = '0px';
+        fixedElement.style.bottom = '450px';
+      } else if (coordinate < 513) {
+        fixedElement.style.position = '';
+        fixedElement.style.top = '';
+        fixedElement.style.bottom = '';
+      }
     }
   });
 
