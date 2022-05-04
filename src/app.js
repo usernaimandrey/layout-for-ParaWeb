@@ -24,6 +24,7 @@ const app = () => {
   const inputDateEnd = document.querySelector('.end_item');
   const filterByName = document.querySelector('.filter__form__author_item');
   const fixedElement = document.querySelector('.filter__form');
+  const header = document.querySelector('.header');
   watcheState.load = 'loading';
   CartsService.getCarts()
     .then(({ data }) => {
@@ -41,27 +42,17 @@ const app = () => {
     });
 
   window.addEventListener('scroll', () => {
-    const coordinate = scrollY;
-    if (screen.width > 1900) {
-      if (coordinate > 530) {
-        fixedElement.style.position = 'fixed';
-        fixedElement.style.top = '0px';
-        fixedElement.style.bottom = '700px';
-      } else if (coordinate < 530) {
-        fixedElement.style.position = '';
-        fixedElement.style.top = '';
-        fixedElement.style.bottom = '';
-      }
-    } else if (screen.width <= 2011) {
-      if (coordinate > 513) {
-        fixedElement.style.position = 'fixed';
-        fixedElement.style.top = '0px';
-        fixedElement.style.bottom = '450px';
-      } else if (coordinate < 513) {
-        fixedElement.style.position = '';
-        fixedElement.style.top = '';
-        fixedElement.style.bottom = '';
-      }
+    const el = fixedElement.getBoundingClientRect();
+    const { height } = header.getBoundingClientRect();
+    const cartsEl = cartsContainer.getBoundingClientRect();
+
+    if (el.top - height <= 0) {
+      fixedElement.style.position = 'fixed';
+      fixedElement.style.top = `${height + 20}px`;
+      fixedElement.style.bottom = '';
+    }
+    if (cartsEl.top > 150) {
+      fixedElement.style.position = '';
     }
   });
 
